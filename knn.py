@@ -2,6 +2,7 @@ import numpy as np
 from sklearn import neighbors, preprocessing
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import matplotlib.pyplot as plt
 
 df = pd.read_csv('breast-cancer-wisconsin.data') # read data
 df.replace('?', -99999, inplace=True) # replace missing data with outlier')
@@ -21,3 +22,9 @@ example_measures = np.array([[4,2,1,1,1,2,3,2,1], [4,2,1,2,2,2,3,2,1]]) # exampl
 
 prediction = clf.predict(example_measures) # predict class of example data
 print(prediction)
+# Plotting the dataset
+plt.scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm')
+plt.xlabel('Feature 0')
+plt.ylabel('Feature 1')
+plt.title('Breast Cancer Wisconsin Dataset')
+plt.show()
