@@ -23,7 +23,7 @@ class Support_Vector_Machine:
         transforms = [[1,1],[-1,1],[-1,-1],[1,-1]] #apply to w
         all_data = []
         for yi in self.data:
-            for featureset in self.data[yi]:
+            for featureset in self.data[yi]:    
                 for feature in featureset:
                     all_data.append(feature)
         self.max_feature_value = max(all_data) #max value in all_data
